@@ -32,7 +32,8 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       print('>>> page ${_pageController.page.round()}');
       if (_pageController.page.round() > 0) {
         print('>>> _progressController parou');     
-        _animationController?.stop();        
+        // _animationController?.reset();
+        _animationController?.stop();
       }
     });
   }
