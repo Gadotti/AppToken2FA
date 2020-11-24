@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:AppToken2FA/widgets/custom_appbar.dart';
+import 'package:AppToken2FA/widgets/settings_popup_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:AppToken2FA/widgets/custom_drawer.dart';
 import 'package:AppToken2FA/widgets/circle_progress.dart';
@@ -98,6 +99,7 @@ class _TokenTabState extends State<TokenTab> with SingleTickerProviderStateMixin
 
   @override
   void dispose() {
+    _animation.removeStatusListener(widget.animationStatusListener);
     super.dispose();
   }
 
@@ -141,10 +143,7 @@ class _TokenTabState extends State<TokenTab> with SingleTickerProviderStateMixin
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            IconButton(
-              icon: Icon(Icons.settings),
-              onPressed: () {},
-            ),
+            SettingsPopupMenuButton()
           ],
         ),
       ),

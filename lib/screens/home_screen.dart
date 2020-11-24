@@ -65,9 +65,6 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         HelpTab(
           pageController: _pageController,
         ),
-        // TokenTab(
-        //   pageController: _pageController,
-        // ),
       ],
     );
   }

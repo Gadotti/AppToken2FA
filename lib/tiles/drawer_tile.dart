@@ -1,3 +1,4 @@
+import 'package:AppToken2FA/theme/widget_themes.dart';
 import 'package:flutter/material.dart';
 
 class DrawerTile extends StatelessWidget {
@@ -25,7 +26,7 @@ class DrawerTile extends StatelessWidget {
               Icon(
                 icon,
                 size: 32.0,
-                color: pageController.page.round() == page ? Theme.of(context).textSelectionColor : Colors.grey[700]                
+                color: pageController.page.round() == page ? Theme.of(context).textSelectionColor : WidgetThemes.iconColor                
               ),
               SizedBox(
                 width: 32.0,
@@ -34,7 +35,7 @@ class DrawerTile extends StatelessWidget {
                 text,
                 style: TextStyle(
                   fontSize: 16.0,
-                  color: pageController.page.round() == page ? Theme.of(context).textSelectionColor : Colors.grey[700]
+                  color: pageController.page.round() == page ? Theme.of(context).textSelectionColor : WidgetThemes.textNormalColor
                 ),
               )
             ],

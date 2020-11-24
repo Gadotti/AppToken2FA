@@ -11,8 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'EmpresaX 2FA',      
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(    
-        //primarySwatch: Colors.blue,
+      theme: ThemeData(
         primaryColor: Colors.white,
         accentColor: Colors.blue,
         textSelectionColor: Colors.blue,
