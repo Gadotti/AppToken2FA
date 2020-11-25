@@ -1,6 +1,6 @@
 # AppToken2FA
 
-This is a clean, neat and elegant prototype for an Two Factor Authenticator App.
+This is a clean, neat and elegant prototype for a Two Factor Authenticator App.
 The purpose is to be able to control the access for multiple systems 
  
 Do not communicate with any server, API or storage of any data. It is only a prototype with random data
