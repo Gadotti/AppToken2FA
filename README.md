@@ -1,16 +1,19 @@
 # AppToken2FA
 
-A new Flutter project.
+This is a clean, neat and elegant prototype for an Two Factor Authenticator App.
+The purpose is to be able to control the access for multiple systems 
+ 
+Do not communicate with any server, API or storage of any data. It is only a prototype with random data
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Collect from a server a new security code every 'X' seconds
+- Be able to read a QrCode to check authorization, instead insert the collected code
+- Configure and authorize the device
+- Remove or reauthorize the device
+- See all the authorized systems with some extra info
+- Have a dedicated page for the app settings
 
-A few resources to get you started if this is your first Flutter project:
+## Some prints e gifs
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+...soon
