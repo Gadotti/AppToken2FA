@@ -17,7 +17,7 @@ Do not communicate with any server, API or storage of any data. It is only a pro
 ## Some prints e gifs
 
 #### Initial or Reauthorize device config screen
-![](https://github.com/Gadotti/AppToken2FA/blob/master/prints/0-intial-config-screen.gif =100x200)
+<img src="https://github.com/Gadotti/AppToken2FA/blob/master/prints/0-intial-config-screen.gif" width="200" height="200" />
 
 #### Main screen requesting new tokens and reading with QRCode
 ![](https://github.com/Gadotti/AppToken2FA/blob/master/prints/1-demo-with-qrcode.gif "New Tokens")
