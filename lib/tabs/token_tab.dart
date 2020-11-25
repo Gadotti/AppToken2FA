@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:AppToken2FA/helpers/qrCode.dart';
 import 'package:AppToken2FA/widgets/custom_appbar.dart';
 import 'package:AppToken2FA/widgets/settings_popup_menu.dart';
 import 'package:flutter/material.dart';
@@ -7,9 +8,6 @@ import 'package:AppToken2FA/widgets/custom_drawer.dart';
 import 'package:AppToken2FA/widgets/circle_progress.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import 'package:flutter/services.dart';
-import 'package:barcode_scan/barcode_scan.dart';
 
 // ignore: must_be_immutable
 class TokenTab extends StatefulWidget {
@@ -48,7 +46,6 @@ class _TokenTabState extends State<TokenTab> with SingleTickerProviderStateMixin
   }
 
   Future<String> _future;
-
 
   @override
   void initState() {
@@ -104,12 +101,15 @@ class _TokenTabState extends State<TokenTab> with SingleTickerProviderStateMixin
   }
 
   @override
-  Widget build(BuildContext context) {    
+  Widget build(BuildContext context) {
+
+    final qrCodeHelper = QrCode(context: context);
+
     return Scaffold( 
       appBar: CustomAppBar(
-        titleText: "Token de autorização",
+        titleText: 'Token de autorização',
       ),
-      drawer: CustomDrawer(widget.pageController),      
+      drawer: CustomDrawer(pageController: widget.pageController, animationController: widget.animationController),
       body: Stack(
         children: [
           Center(
@@ -134,7 +134,7 @@ class _TokenTabState extends State<TokenTab> with SingleTickerProviderStateMixin
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed:_qrCodeScan,
+        onPressed: qrCodeHelper.scan,
         child: FaIcon(FontAwesomeIcons.qrcode),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
@@ -147,74 +147,6 @@ class _TokenTabState extends State<TokenTab> with SingleTickerProviderStateMixin
           ],
         ),
       ),
-    );
-  }
-
-  Future _qrCodeScan() async {
-    try {
-
-      // var options = ScanOptions(
-      //   strings: {
-      //     "cancel": _cancelController.text,
-      //     "flash_on": _flashOnController.text,
-      //     "flash_off": _flashOffController.text,
-      //   },
-      //   restrictFormat: selectedFormats,
-      //   useCamera: _selectedCamera,
-      //   autoEnableFlash: _autoEnableFlash,
-      //   android: AndroidOptions(
-      //     aspectTolerance: _aspectTolerance,
-      //     useAutoFocus: _useAutoFocus,
-      //   ),
-      // );
-
-      // var result = await BarcodeScanner.scan(options: options);
-      // showDialog(context: context, )
-
-      var barcode = await BarcodeScanner.scan();
-      _showDialog('Resultado', barcode);
-      // if (barcode.type == ResultType.Barcode) {
-      //   _showDialog('Resultado', barcode);
-      // } else if (barcode.type == ResultType.Error) {
-      //   _showDialog('Erro', 'Não foi possível ler o QRCode com sucesso.');
-      // }
-
-      // setState(() => this.barcode = barcode);
-    } on PlatformException catch (e) {
-      if (e.code == BarcodeScanner.CameraAccessDenied) {
-        _showDialog('Erro de permissão', 'É necessário permitir o acesso à camera do dispositivo');
-        // setState(() {
-        //   this.barcode = 'The user did not grant the camera permission!';
-        // });
-      } else {
-        _showDialog('Exceção', 'Erro desconhecido: $e');
-        // setState(() => this.barcode = 'Unknown error: $e');
-      }
-    } on FormatException{
-      // setState(() => this.barcode = 'null (User returned using the "back"-button before scanning anything. Result)');
-    } catch (e) {
-      _showDialog('Exceção', 'Erro desconhecido: $e');
-      // setState(() => this.barcode = 'Unknown error: $e');
-    }
-  }
-
-  void _showDialog(String title, String info) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(title),
-          content: Text(info),
-          actions: <Widget>[
-            FlatButton(
-              child: Text("Fechar"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
     );
   }
 

@@ -4,8 +4,9 @@ import 'package:AppToken2FA/tiles/drawer_tile.dart';
 class CustomDrawer extends StatelessWidget {
 
   final PageController pageController;
+  final AnimationController animationController;
 
-  CustomDrawer(this.pageController);
+  CustomDrawer({@required this.pageController, this.animationController});
 
   @override
   Widget build(BuildContext context) {
@@ -88,12 +89,12 @@ class CustomDrawer extends StatelessWidget {
                 ),
               ),
               Divider(),
-              DrawerTile(Icons.security, "Token de autorização", pageController, 0),
-              DrawerTile(Icons.list, "Sistemas autorizados", pageController, 1),
-              DrawerTile(Icons.settings, "Preferências", pageController, 2),
-              DrawerTile(Icons.help, "Ajuda", pageController, 3),
+              DrawerTile(icon: Icons.security, text: 'Token de autorização', pageController: pageController, page: 0),
+              DrawerTile(icon: Icons.list, text: 'Sistemas autorizados', pageController: pageController, page: 1),
+              DrawerTile(icon: Icons.settings, text: 'Configurações', pageController: pageController, page: 2),
+              DrawerTile(icon: Icons.help, text: 'Ajuda', pageController: pageController, page: 3),
               Divider(),
-              DrawerTile(Icons.exit_to_app, "Desconectar", pageController, 4),
+              DrawerTile(icon: Icons.exit_to_app, text: 'Desconectar', animationController: animationController, disconnect: true,),
             ],
           )
         ],

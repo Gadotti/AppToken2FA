@@ -4,18 +4,26 @@ import 'package:flutter/material.dart';
 class AuthorizedSystemTile extends StatelessWidget {
 
   final String systemName;
+  final String login;
+  final String lastLogin;
 
-  AuthorizedSystemTile({@required this.systemName});
+  AuthorizedSystemTile({@required this.systemName, 
+                        @required this.login, 
+                        @required this.lastLogin});
 
   @override
   Widget build(BuildContext context) {
-    return Card(      
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10))
+      ),
       margin: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       child: Theme(
         data: ThemeData(
+          dividerColor: Colors.transparent,
           accentColor: WidgetThemes.expansionTileOpen
         ),
-        child: ExpansionTile(        
+        child: ExpansionTile(
           childrenPadding: EdgeInsets.all(15),
           title: Text(
             systemName,
@@ -35,7 +43,7 @@ class AuthorizedSystemTile extends StatelessWidget {
                   )
                 ),
                 Text(
-                  "eduardo.gadotti",
+                  login,
                   style: TextStyle(
                     color: WidgetThemes.textNormalColor
                   )
@@ -53,7 +61,7 @@ class AuthorizedSystemTile extends StatelessWidget {
                   )
                 ),
                 Text(
-                  "24/11/2020 13:43:33",
+                  lastLogin,
                   style: TextStyle(
                     color: WidgetThemes.textNormalColor
                   )

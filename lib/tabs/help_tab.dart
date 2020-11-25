@@ -18,7 +18,7 @@ class _HelpTabState extends State<HelpTab> {
       appBar: CustomAppBar(
         titleText: "Ajuda",
       ),
-      drawer: CustomDrawer(widget.pageController),
+      drawer: CustomDrawer(pageController: widget.pageController),
       body: Column(),
     );
   }
