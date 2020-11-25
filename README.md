@@ -17,19 +17,19 @@ Do not communicate with any server, API or storage of any data. It is only a pro
 ## Some prints e gifs
 
 #### Initial or Reauthorize device config screen
-<img src="https://github.com/Gadotti/AppToken2FA/blob/master/prints/0-intial-config-screen.gif" width="200" height="200" />
+<img src="https://github.com/Gadotti/AppToken2FA/blob/master/prints/0-intial-config-screen.gif" width="300" height="500" />
 
 #### Main screen requesting new tokens and reading with QRCode
-![](https://github.com/Gadotti/AppToken2FA/blob/master/prints/1-demo-with-qrcode.gif "New Tokens")
+<img src="https://github.com/Gadotti/AppToken2FA/blob/master/prints/1-demo-with-qrcode.gif" width="300" height="500" />
 
 #### Quick settings from main screen
-![](https://github.com/Gadotti/AppToken2FA/blob/master/prints/2-setting-main-page.gif "Settings from main screen")
+<img src="https://github.com/Gadotti/AppToken2FA/blob/master/prints/2-setting-main-page.gif" width="300" height="500" />
 
 #### Custom drawer menu
-![](https://github.com/Gadotti/AppToken2FA/blob/master/prints/3-drawer-menu.gif "Custom drawer menu")
+<img src="https://github.com/Gadotti/AppToken2FA/blob/master/prints/3-drawer-menu.gif" width="300" height="500" />
 
 #### Authorized systems list screen
-![](https://github.com/Gadotti/AppToken2FA/blob/master/prints/4-authorized-systems.gif "Authorized systems list")
+<img src="https://github.com/Gadotti/AppToken2FA/blob/master/prints/4-authorized-systems.gif" width="300" height="500" />
 
 #### App settings screen
-![](https://github.com/Gadotti/AppToken2FA/blob/master/prints/5-settings-page.gif "App settings screen")
+<img src="https://github.com/Gadotti/AppToken2FA/blob/master/prints/5-settings-page.gif" width="300" height="500" />
